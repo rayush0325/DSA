@@ -9,7 +9,7 @@ public class LinkedList {
         node1.next=head;//value of variable-next of object is null
         head=node1;//now head is containing the reference to this object
 
-        Node node2=new Node();//node1 containing the reference to 2nd object created in heap
+        Node node2=new Node();//node2 containing the reference to 2nd object created in heap
         node2.data=2;
         node2.next=head;//now next of node2 is containing the reference to first object
         head=node2;//now head is containing the reference to 2nd object
