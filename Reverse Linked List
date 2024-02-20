@@ -1,0 +1,16 @@
+    //Function to reverse a linked list.
+    
+    Node reverseList(Node head)
+    {
+        if(head.next!=null){
+            Node temp=head.next;
+            head.next=null;
+            while(temp!=null){
+                Node posttemp=temp.next;
+                temp.next=head;
+                head=temp;
+                temp=posttemp;
+            }
+        }
+        return head;
+    }
