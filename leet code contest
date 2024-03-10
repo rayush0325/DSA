@@ -1,0 +1,31 @@
+class Solution {
+    public long maximumHappinessSum(int[] happiness, int k) {
+        long sum=0;
+        for(int i=0;i<k;i++){
+            int max_id=0;
+            for(int j=1;j<happiness.length;j++){
+                if(happiness[max_id]<happiness[j]){
+                    if(happiness[max_id]!=0){
+                        happiness[max_id]--;                       
+                    }
+                     max_id=j;
+                }
+                else{
+                   if(happiness[j]!=0){
+                       happiness[j]--;
+                   }
+               }
+                
+            }
+            if(happiness[max_id]==0){
+                break;
+            }
+            sum+=happiness[max_id];
+            happiness[max_id]=0;
+            for(int j=max_id;j<happiness.length-(k+1);j++){
+                happiness[j]=happiness[j+1];
+            }
+        }
+        return sum;
+    }
+}
